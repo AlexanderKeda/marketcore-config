@@ -5,6 +5,14 @@ spring:
   autoconfigure:
     exclude:
       - org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8090/realms/market_core
+          jwk-set-uri: http://keycloak:8080/realms/market_core/protocol/openid-connect/certs
+          authorities-claim-name: spring_sec_roles
+          authority-prefix: ROLE_
 
 eureka:
   client:
