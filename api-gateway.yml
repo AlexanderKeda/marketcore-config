@@ -13,6 +13,11 @@ spring:
                 - Path=/api/users/**
               filters:
                 - StripPrefix=1
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/market_core
 
 eureka:
   client:
